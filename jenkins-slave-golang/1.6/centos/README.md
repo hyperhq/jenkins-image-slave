@@ -8,3 +8,10 @@ It contains:
 - jenkins slave(REF: [jenkinsci/slave](https://hub.docker.com/r/jenkinsci/slave/))
 
 Usage: `./build.sh`
+
+
+>When use "Execute shell" in build step, please add the following lines
+```
+export GOROOT=/usr/local/go
+export PATH=$GOROOT/bin:$PATH
+```
