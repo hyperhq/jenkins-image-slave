@@ -1,4 +1,4 @@
-Jenkins Slave Docker image for Hyper_
+Jenkins Slave Docker image for Hyper.sh
 ======================================
 
 These examples show how to bake customized Jenkins Slave Node.

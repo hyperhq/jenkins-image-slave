@@ -10,7 +10,7 @@ This is a jenkins slave image for build project with gradle, the base image is `
 
 ## Config General
 ```
-Run the build inside Hyper_ container
+Run the build inside Hyper.sh container
   -> Docker Image: hyperhq/jenkins-slave-gradle
   -> Container Size: S4
 ```
