@@ -1,5 +1,5 @@
 Jenkins Slave Docker image for Hyper.sh
-======================================
+=======================================
 
 These examples show how to bake customized Jenkins Slave Node.
 
@@ -11,4 +11,5 @@ These examples show how to bake customized Jenkins Slave Node.
   - [1.7-ubuntu](jenkins-slave-golang/1.7/ubuntu)
 - [jenkins-slave-gradle](jenkins-slave-gradle)
 - [jenkins-slave-python](jenkins-slave-python)
-- [jenkins-slave-php](jenkins-slave-python)
+- [jenkins-slave-php](jenkins-slave-php)
+- [jenkins-slave-swift](jenkins-slave-swift)
