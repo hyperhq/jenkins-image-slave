@@ -9,6 +9,12 @@ MAINTAINER Jimmy Xu <jimmy@hyper.sh>
 ##########################################
 ENV DEBIAN_FRONTEND noninteractive
 ADD ./etc/apt/sources.list /etc/apt/sources.list
+
+## enable aufs
+RUN apt-get update &&\
+    apt-get install -y linux-image-extra-virtual &&\
+    rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 RUN apt-get update &&\
     apt-get install -y autoconf automake pkg-config libdevmapper-dev libsqlite3-dev libvirt-dev qemu libvirt-bin sudo curl &&\
     apt-get clean && \
@@ -21,6 +27,7 @@ RUN cd `mktemp -d` &&\
     make device-mapper &&\
     make install &&\
     rm -rf /tmp/*
+
 
 VOLUME ["/home/jenkins"]
 WORKDIR $HOME

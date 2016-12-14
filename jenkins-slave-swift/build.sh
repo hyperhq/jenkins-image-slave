@@ -6,13 +6,11 @@ repo="hyperhq/jenkins-slave-swift"
 tag="swift3"
 image=${repo}:${tag}
 
-DOCKER0=$(ifconfig | grep docker0 -A1 | grep "inet " | awk '{print $2}')
-PROXY="http://${DOCKER0}:8118"
 
 function build(){
     echo "starting build..."
     echo "=============================================================="
-    CMD="docker build --build-arg HTTP_PROXY=${PROXY} --build-arg HTTPS_PROXY=${PROXY} -t ${image} ."
+    CMD="docker build --build-arg http_proxy=${http_proxy} --build-arg https_proxy=${https_proxy} -t ${image} ."
     echo "CMD: [ ${CMD} ]"
     eval $CMD
 }
