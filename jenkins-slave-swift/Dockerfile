@@ -19,12 +19,12 @@ VOLUME ["/home/jenkins"]
 ##     prepare oracle-jdk8 run env      ##
 ##########################################
 RUN rm -rvf /var/lib/apt/lists/* && \
-  apt-get -o Acquire::http::proxy="${HTTP_PROXY}" -y update && \
-  apt-get -o Acquire::http::proxy="${HTTP_PROXY}" install -y software-properties-common && \
+  apt-get -o Acquire::http::proxy="${http_proxy}" -y update && \
+  apt-get -o Acquire::http::proxy="${http_proxy}" install -y software-properties-common && \
   echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
   add-apt-repository -y ppa:webupd8team/java && \
-  apt-get -o Acquire::http::proxy="${HTTP_PROXY}" -y update && \
-  apt-get -o Acquire::http::proxy="${HTTP_PROXY}" install -y oracle-java8-installer && \
+  apt-get -o Acquire::http::proxy="${http_proxy}" -y update && \
+  apt-get -o Acquire::http::proxy="${http_proxy}" install -y oracle-java8-installer && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

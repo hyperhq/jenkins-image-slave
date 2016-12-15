@@ -2,8 +2,8 @@
 
 set -e
 
-repo="hyperhq/jenkins-slave-swift"
-tag="swift3"
+repo="hyperhq/jenkins-slave-hyper"
+tag="ubuntu1604"
 image=${repo}:${tag}
 
 
