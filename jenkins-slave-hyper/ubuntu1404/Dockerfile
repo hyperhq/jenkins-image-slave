@@ -16,7 +16,7 @@ RUN apt-get update &&\
     rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN apt-get update &&\
-    apt-get install -y autoconf automake pkg-config libdevmapper-dev libsqlite3-dev libvirt-dev qemu libvirt-bin aufs-tools sudo curl &&\
+    apt-get install -y autoconf automake pkg-config libdevmapper-dev libsqlite3-dev libvirt-dev qemu libvirt-bin aufs-tools unzip sudo curl &&\
     apt-get clean && \
     rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN cd `mktemp -d` &&\
