@@ -28,6 +28,10 @@ RUN cd `mktemp -d` &&\
     make install &&\
     rm -rf /tmp/*
 
+# enable xfs
+RUN apt-get update &&\
+    apt-get install -y xfsprogs &&\
+    rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 VOLUME ["/home/jenkins"]
 WORKDIR $HOME
