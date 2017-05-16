@@ -18,7 +18,7 @@ VOLUME ["/home/jenkins"]
 ##        prepare java run env        ##
 ##########################################
 #RUN yum update -y
-RUN yum install -y wget && yum clean packages
+RUN yum install -y wget && yum clean all
 RUN wget --no-check-certificate --no-cookies \
         --header "Cookie: oraclelicense=accept-securebackup-cookie" \
         http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.rpm \
@@ -48,7 +48,7 @@ ENV PATH $GOPATH/bin:$GOROOT/bin:$PATH
 RUN mkdir -p $GOPATH
 
 ##########################################
-RUN yum install -y make git which gcc && yum clean packages
+RUN rpm --rebuilddb && touch /var/lib/rpm/* && yum install -y make git which gcc && yum clean all 
 
 WORKDIR $HOME
 USER root
