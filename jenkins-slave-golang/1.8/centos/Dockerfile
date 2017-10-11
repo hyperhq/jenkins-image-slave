@@ -18,6 +18,8 @@ VOLUME ["/home/jenkins"]
 ##        prepare java run env        ##
 ##########################################
 #RUN yum update -y
+RUN yum install -y http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
+RUN yum install -y Percona-Server-MongoDB-32
 RUN yum install -y wget && yum clean all
 RUN wget --no-check-certificate --no-cookies \
         --header "Cookie: oraclelicense=accept-securebackup-cookie" \
