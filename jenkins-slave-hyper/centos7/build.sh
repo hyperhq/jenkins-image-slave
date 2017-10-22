@@ -2,10 +2,9 @@
 
 set -e
 
-repo="hyperhq/jenkins-slave-golang"
-tag=1.7-centos
+repo="hyperhq/jenkins-image-slave"
+tag=go1.8-centos7-mgo
 image=${repo}:${tag}
-
 
 
 function build(){
@@ -20,10 +19,6 @@ function push(){
     echo "=============================================================="
     docker push ${image}
 
-    echo -e "\nstarting push [${repo}:latest] ..."
-    echo "=============================================================="
-    docker tag ${image} ${repo}:latest
-    docker push ${repo}:latest
 }
 
 
